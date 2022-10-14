@@ -31,7 +31,7 @@ class ToyPipeline(AbstractPipelineClass):
                 optimizer.step()
                 
                 print("epoch: {}, loss:{}".format(ep, loss.item()))
-    
+        print("done")
     def preprocess(self, x):
         return x
     
@@ -39,7 +39,10 @@ class ToyPipeline(AbstractPipelineClass):
         return x
 
 if __name__ == "__main__":
-    pipe = ToyPipeline(Model("sin", 42))
+    activation = "sin"
+    hiddem_dim = 42
+    model = Model(activation, hiddem_dim)
+    pipe = ToyPipeline(model)
     pipe.train()
 
     #pipe = ToyPipeline(Model("cos", 12))

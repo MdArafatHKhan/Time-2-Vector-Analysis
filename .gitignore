@@ -16,3 +16,4 @@
 packages/
 resources/
 Chapters/
+Code/__pycache__/

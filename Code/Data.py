@@ -1,12 +1,13 @@
 from torch.utils.data import Dataset
 import pandas as pd
 import numpy as np
+import os
 
 class ToyDataset(Dataset):
     def __init__(self):
         super(ToyDataset, self).__init__()
         
-        df = pd.read_csv("./data/toy_dataset.csv")
+        df = pd.read_csv(os.path.join(os.path.abspath(os.getcwd()),"Code", "data", "toy_dataset.csv"))
         self.x = df["x"].values
         self.y = df["y"].values
 
